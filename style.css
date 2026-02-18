@@ -1,0 +1,111 @@
+:root {
+    --bg: #0f172a;
+    --glass: rgba(255, 255, 255, 0.05);
+    --neon-blue: #00f2ff;
+    --neon-pink: #ff007f;
+    --text: #f1f5f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text);
+}
+
+.stopwatch-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+}
+
+.brand {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+}
+
+.brand span { color: var(--neon-blue); }
+
+.display-container {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.ms {
+    font-size: 1.5rem;
+    color: var(--neon-blue);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background: var(--neon-blue);
+    color: var(--bg);
+    box-shadow: 0 0 15px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+#resetBtn:hover:not(:disabled) {
+    background: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.laps-container {
+    margin-top: 2rem;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.laps-container::-webkit-scrollbar { width: 5px; }
+.laps-container::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
+
+ul { list-style: none; }
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+}

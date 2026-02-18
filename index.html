@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowStop | Precision Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stopwatch-card">
+            <h1 class="brand">GLOW<span>STOP</span></h1>
+            
+            <div class="display-container">
+                <div id="display">00:00:00:<span class="ms">00</span></div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" onclick="start()">Start</button>
+                <button id="pauseBtn" onclick="pause()" disabled>Pause</button>
+                <button id="lapBtn" onclick="lap()" disabled>Lap</button>
+                <button id="resetBtn" onclick="reset()">Reset</button>
+            </div>
+
+            <div class="laps-container">
+                <h3>Lap History</h3>
+                <ul id="lapsList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
